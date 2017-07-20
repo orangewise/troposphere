@@ -5,7 +5,7 @@
 
 from . import AWSObject, AWSProperty, Tags
 from .validators import boolean
-from troposphere.applicationautoscaling import ScalableTarget
+from troposphere.applicationautoscaling import ScalableTarget, ScalingPolicy
 
 def attribute_type_validator(x):
     valid_types = ["S", "N", "B"]
@@ -110,5 +110,6 @@ class Table(AWSObject):
         'TableName': (basestring, False),
         'Tags': (Tags, False),
         'TimeToLiveSpecification': (TimeToLiveSpecification, False),
-        'ScalableTarget': (ScalableTarget, False),
+        'scalableTarget': (ScalableTarget, False),
+        'scalingPolicy': (ScalingPolicy, False),
     }
