@@ -5,7 +5,7 @@
 
 from . import AWSObject, AWSProperty, Tags
 from .validators import boolean
-
+from troposphere.applicationautoscaling import ScalableTarget
 
 def attribute_type_validator(x):
     valid_types = ["S", "N", "B"]
@@ -92,10 +92,10 @@ class TimeToLiveSpecification(AWSProperty):
             'Enabled': (boolean, True),
         }
 
-class ScalableTarget(AWSProperty):
-        props = {
-            'ScalableTarget': (basestring, True),
-        }
+# class ScalableTarget(AWSProperty):
+#         props = {
+#             'ScalableTarget': (basestring, True),
+#         }
 
 class Table(AWSObject):
     resource_type = "AWS::DynamoDB::Table"
