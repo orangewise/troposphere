@@ -92,6 +92,10 @@ class TimeToLiveSpecification(AWSProperty):
             'Enabled': (boolean, True),
         }
 
+class ScalableTarget(AWSProperty):
+        props = {
+            'ScalableTarget': (basestring, True),
+        }
 
 class Table(AWSObject):
     resource_type = "AWS::DynamoDB::Table"
@@ -106,4 +110,5 @@ class Table(AWSObject):
         'TableName': (basestring, False),
         'Tags': (Tags, False),
         'TimeToLiveSpecification': (TimeToLiveSpecification, False),
+        'ScalableTarget': (ScalableTarget, False),
     }
